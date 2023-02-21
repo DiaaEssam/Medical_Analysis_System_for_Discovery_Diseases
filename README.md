@@ -1,4 +1,4 @@
-# Medical_Analysis_System_for_Discovery_Diseases_Using_Pyke
+# Medical_Analysis_System_for_Discovery_Diseases(Expert System)
 This is a system for discovering diseases such as DIABETES (TYPE 2), CARDIOVASCULAR, HYPERTENSION, DYSLIPIDEMIA, CENTRAL OBESITY, PERIPHERAL NEUROPATHY, and DIABETIC FOOT.<br/>
 This project is associated with the Introduction to Logic course at Faculty of Computers and Artificial Intelligence Cairo University.
 
