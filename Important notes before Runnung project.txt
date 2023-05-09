@@ -1,0 +1,8 @@
+# please change the path in the following lines in main.py:
+   -12
+   -13
+   -14
+   -15
+# I modify rules file every time the user give the program answers, you may find initial assignments such as $ans1=True, $ans2=False, but i modify these lines by the answers from users
+  because I could not access answers from file questions
+# You can maximize the window of the interface as found in screenshots, because it may appear like very thin window

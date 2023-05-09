@@ -1,0 +1,61 @@
+#Diagnosis
+
+#Diabetes - Strong Sign
+has_diabetes(polydipsia, polyphagia)
+has_diabetes(polyurea, polyphagia)
+
+#Diabetes - Weak Sign
+maybe_diabetes(weightLoss, weakImmunity)
+
+#Cardiovascular - Strong Sign
+has_cardio(atherosclerosis)
+has_cardio(dyslipidemia)
+has_cardio(atherosclerosis , shortBreath , anginaPectoris)
+has_cardio(atherosclerosis , exhaust , anginaPectoris)
+has_cardio(atherosclerosis , shortBreath)
+has_cardio(atherosclerosis , exhaust)
+has_cardio(atherosclerosis , anginaPectoris)
+
+#Hypertension - Most Common Sign
+has_hyper(headache)
+
+#Hypertension - Most Accurate Sign
+has_hyper(headache , BloodPressure)
+
+#Dyslipidemia - Strong Sign
+has_dysli(anginaPectoris , legPain)
+
+#Dyslipidemia - Weak Sign
+maybe_dysli(shortBreath)
+
+#Obesity
+has_obes(BMI_Large)
+has_obes(cardiovascular, diabetes, hypertension)
+
+#Peripheral neuropathy
+has_neuro(numb, redness)
+has_neuro(numb, tingle)
+has_neuro(numb, burning_pain)
+has_neuro(tingle, burning_pain)
+has_neuro(tingle, redness)
+has_neuro(burning_pain, redness)
+has_neuro(peripheralNeuro)
+
+#Peripheral Arterial
+has_arty(strain, weak_muscles)
+has_arty(strain, delay_wound)
+has_arty(weak_muscles, delay_wound)
+
+#Diabetic Foot
+has_foot(peripheralArty, peripheralNeuro, diabetes)
+
+#Metabolic Syndrome
+has_meta(hypertension, obesity)
+has_meta(hypertension, diabetes)
+has_meta(obesity, diabetes)
+has_meta(hypertension, dyslipidemia)
+has_meta(obesity, dyslipidemia)
+has_meta(diabetes, dyslipidemia)
+
+#Atherolsclerosis
+has_ather(metabolicSyndrome , diabetes)

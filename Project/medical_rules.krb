@@ -1,0 +1,249 @@
+# Diagnosis Rules
+
+diabetes_strong_1
+    use has_diabetes(polydipsia, polyphagia)
+    when
+        $ans1=True
+        $ans3=True
+        check $ans1 == True
+        check $ans3 == True
+
+diabetes_strong_2
+    use has_diabetes(polyurea, polyphagia)
+    when
+        $ans2=True
+        $ans3=True
+        check $ans2 == True
+        check $ans3 == True
+
+diabetes_weak
+    use maybe_diabetes(weightLoss, weakImmunity)
+    when
+        $ans4=True
+        $ans5=True
+        check $ans4 == True
+        check $ans5 == True
+
+cardio_strong_1
+    use has_cardio(atherosclerosis , shortBreath , anginaPectoris)
+    when
+        $ans6=True
+        $ans7=True
+        $ans8=True
+        $ans9=True
+        check $ans6 == True
+        check $ans7 == True
+        check $ans9 == True
+
+cardio_strong_2
+    use has_cardio(atherosclerosis , exhaust , anginaPectoris)
+    when
+        $ans6=True
+        $ans7=True
+        $ans8=True
+        $ans9=True
+        check $ans6 == True
+        check $ans6 == True
+        check $ans9 == True
+
+cardio_strong_3
+    use has_cardio(atherosclerosis)
+    when
+        $ans6=True
+        $ans8=False
+        $ans7=True
+        $ans9=False
+        check $ans6 == True
+
+cardio_strong_4
+    use has_cardio(dyslipidemia)
+    when
+        has_dysli(anginaPectoris , legPain)
+
+hyper_common
+    use has_hyper(headache)
+    when
+        $ans10=True
+        check $ans10 == True
+
+hyper_accurate
+    use has_hyper(headache , BloodPressure)
+    when
+        $ans10=True
+        $ans19=190
+        $ans20=190
+        check $ans10 == True
+        check $ans19 > 140
+        check $ans20 > 90
+
+dysli_strong
+    use has_dysli(anginaPectoris , legPain)
+    when
+        $ans9=True
+        $ans11=True
+        check $ans9 == True
+        check $ans11 == True
+
+dysli_weak
+    use maybe_dysli(shortBreath)
+    when
+        $ans22=True
+        check $ans22 == True
+
+obesity_1
+    use has_obes(BMI_Large)
+    when
+        $ans21=190
+        check $ans21 > 30.0
+
+obesity_2
+    use has_obes(cardiovascular, diabetes, hypertension)
+    when
+        has_obes(BMI_Large)
+
+neuro_strong_1
+    use has_neuro(numb, redness)
+    when
+        $ans12=False
+        $ans13=False
+        $ans14=False
+        $ans15=False
+        check $ans12 == True
+        check $ans15 == True
+neuro_strong_2
+    use has_neuro(numb, tingle)
+    when
+        $ans12=False
+        $ans13=False
+        $ans14=False
+        $ans15=False
+        check $ans12 == True
+        check $ans13 == True
+
+neuro_strong_3
+    use has_neuro(numb, burning_pain)
+    when
+        $ans12=False
+        $ans13=False
+        $ans14=False
+        $ans15=False
+        check $ans12 == True
+        check $ans14 == True
+
+neuro_strong_4
+    use has_neuro(tingle, burning_pain)
+    when
+        $ans12=False
+        $ans13=False
+        $ans14=False
+        $ans15=False
+        check $ans13 == True
+        check $ans14 == True
+
+neuro_strong_5
+    use has_neuro(tingle, redness)
+    when
+        $ans12=False
+        $ans13=False
+        $ans14=False
+        $ans15=False
+        check $ans13 == True
+        check $ans15 == True
+
+neuro_strong_6
+    use has_neuro(burning_pain, redness)
+    when
+        $ans12=False
+        $ans13=False
+        $ans14=False
+        $ans15=False
+        check $ans14 == True
+        check $ans15 == True
+
+neuro_strong11
+    use has_neuro(peripheralNeuro)
+    when
+        has_diabetes($var1, $var2)
+
+neuro_strong12
+    use has_neuro(peripheralNeuro)
+    when
+        has_diabetes($var1, $var2)
+        has_arty($var3, $var4)
+        
+
+arterial_strong_1
+    use has_arty(strain, weak_muscles)
+    when
+        $ans16=True
+        $ans17=True
+        $ans18=True
+        check $ans16 == True
+        check $ans17 == True
+
+arterial_strong_2
+    use has_arty(strain, delay_wound)
+    when
+        $ans16=True
+        $ans17=True
+        $ans18=True
+        check $ans16 == True
+        check $ans18 == True
+
+arterial_strong_3
+    use has_arty(weak_muscles, delay_wound)
+    when
+        $ans16=True
+        $ans17=True
+        $ans18=True
+        check $ans17 == True
+        check $ans18 == True
+
+diabetic_foot
+    use has_foot(peripheralArty, peripheralNeuro, diabetes)
+    when
+        has_arty($var3, $var4)
+        has_neuro($var5, $var6)
+        has_diabetes($var1, $var2)
+
+meta_syndrome_1
+    use has_meta(hypertension, obesity)
+    when
+        has_hyper($var3, $var4)
+        has_obes($var5)
+
+meta_syndrome_2
+    use has_meta(hypertension, diabetes)
+    when
+        has_hyper($var3, $var4)
+        has_diabetes($var1, $var2)
+
+meta_syndrome_3
+    use has_meta(obesity, diabetes)
+    when
+        has_obes($var5)
+        has_diabetes($var1, $var2)
+
+meta_syndrome_4
+    use has_meta(hypertension, dyslipidemia)
+    when
+        has_hyper($var3, $var4)
+        has_dysli($var1, $var2)
+
+meta_syndrome_5
+    use has_meta(obesity, dyslipidemia)
+    when
+        has_obes($var5)
+        has_dysli($var1, $var2)
+
+meta_syndrome_6
+    use has_meta(diabetes, dyslipidemia)
+    when
+        has_diabetes($var1, $var2)
+        has_dysli($var1, $var2)
+
+ather_strong
+    use has_ather(metabolicSyndrome , diabetes)
+    when
+        has_meta($var1, $var2)
+        has_diabetes($var3, $var4)

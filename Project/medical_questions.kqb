@@ -1,0 +1,106 @@
+# Patient Form
+
+have_polydipsia($ans1)
+	Does he/she get thirsty more than usual?
+	---
+	$ans1 = yn
+	
+have_polyurea($ans2)
+	Does he/she urinate more than usual in the day with an increase in the volume of urine excreted?
+	---
+	$ans2 = yn
+
+have_polyphagia($ans3)
+	Does he/she have Polyphagia?
+	---
+	$ans3 = yn
+
+have_WeightLoss($ans4)
+	Does he/she suffer from Weight Loss?
+	---
+	$ans4 = yn
+
+have_weakImmunity($ans5)
+	Does he/she get flu more often?
+	---
+	$ans5 = yn
+
+have_atherosclerosis($ans6)
+    Does he/she suspect having lesions?
+    ---
+    $ans6 = yn
+
+have_shortBreath($ans7)
+	Does he/she suffer from Shortness of Breath?
+	---
+	$ans7 = yn
+
+have_exhaust($ans8)
+	Does he/she suffer from Exhaustion?
+	---
+	$ans8 = yn
+
+have_anginaPectoris($ans9)
+	Does he/she suffer from Chest Pain?
+	---
+	$ans9 = yn
+
+have_headache($ans10)
+	Does he/she get headaches more often?
+	---
+	$ans10 = yn
+
+have_legPain($ans11)
+	Does he/she suffer from Leg Pain?
+	---
+	$ans11 = yn
+
+have_numbness($ans12)
+    Does he/she often feel numb?
+	---
+	$ans12 = yn
+
+have_tingle($ans13)
+    Does he/she have any tingling in your feet or hands?
+	---
+	$ans13 = yn
+
+have_burn_pain($ans14)
+    Does he/she have any burning pain?
+	---
+	$ans14 = yn
+
+have_redness($ans15)
+    Does he/she have any redness?
+	---
+	$ans15 = yn
+
+have_strain($ans16)
+    Does he/she have any muscle strain or Pain in foot?
+	---
+	$ans16 = yn
+
+have_weak_muscles($ans17)
+    Does he/she have weakness in peripheral muscles?
+	---
+	$ans17 = yn
+
+have_delay_wound($ans18)
+    Does he/she have any foot & toes gangrene or Delayed wound healing?
+	---
+	$ans18 = yn
+
+blood_upper($ans19)
+    Enter SYSTOLIC mm Hg (upper number):
+    ---
+    $ans19 = integer(1-200)
+
+blood_lower($ans20)
+    Enter DIASTOLIC mm Hg (lower number):
+    ---
+    $ans20 = integer(1-200)
+
+calculate_bmi($ans21)
+    Enter his/her BMI:
+    ---
+    $ans21 = float(1-200)
